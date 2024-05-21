@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "04f13d7e-2cb0-4b6e-99b4-af6d1ae59eb0",
+		"name": "Second runner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/posts",
+			"id": "0384fb08-5073-40b4-a07e-29f632da2106",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"id": "4b58f755-e919-4876-b228-0751a3b97620",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "/photos",
+			"id": "8db76628-918f-4bc1-bbde-a7456e8cef31",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/photos"
+			},
+			"response": []
+		},
+		{
+			"name": "/albums",
+			"id": "90f361c5-d602-4fd7-8af2-9167496335c1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/albums"
+			},
+			"response": []
+		}
+	]
+}

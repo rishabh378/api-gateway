@@ -21,7 +21,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"uid\": \"lVuJywjAY3N9dlqys4I0edZmXoy1\"\n}"
+					"raw": "{\n    \"uid\": \"lVuJywjAY3N9dlqys4I0edZmXoy1234\"\n}"
 				},
 				"url": "{{host}}/auth/login"
 			},

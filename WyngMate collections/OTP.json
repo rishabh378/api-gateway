@@ -1,0 +1,71 @@
+{
+  "id" : "collection-8c6e289d",
+  "name" : "OTP",
+  "isFolder" : false,
+  "topMostLevel" : true,
+  "items" : [ {
+    "id" : "request-4fac9dc7",
+    "name" : "generate-otp",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-8c6e289d",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "http://localhost:8084/user/otp/login",
+        "method" : "POST",
+        "jsonBody" : {
+          "contactType" : "EMAIL",
+          "userContact" : "rishabhkumar@yopmail.com",
+          "otpType" : "LOGIN"
+        },
+        "headers" : [ ],
+        "queryParams" : [ {
+          "id" : 0,
+          "key" : "email",
+          "value" : "nikhil.negi@objectivehub.com",
+          "enable" : true,
+          "deleted" : false
+        } ]
+      }
+    },
+    "collectionId" : "collection-8c6e289d"
+  }, {
+    "id" : "request-80243de1",
+    "name" : "validate-otp",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-8c6e289d",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "http://localhost:8084/user/otp/validate",
+        "method" : "POST",
+        "jsonBody" : {
+          "contactType" : "EMAIL",
+          "userContact" : "rishabhkumar@yopmail.com",
+          "otpType" : "LOGIN",
+          "otp" : "7030"
+        },
+        "headers" : [ ],
+        "queryParams" : [ {
+          "id" : 0,
+          "key" : "email",
+          "value" : "nikhil.negi@objectivehub.com",
+          "enable" : true,
+          "deleted" : false
+        }, {
+          "id" : 1,
+          "key" : "otp",
+          "value" : "6976",
+          "enable" : true,
+          "deleted" : false
+        } ]
+      }
+    },
+    "collectionId" : "collection-8c6e289d"
+  } ],
+  "collectionId" : "collection-8c6e289d"
+}

@@ -1,0 +1,167 @@
+{
+  "id" : "collection-affb13df",
+  "name" : "phones",
+  "isFolder" : false,
+  "topMostLevel" : true,
+  "items" : [ {
+    "id" : "request-d5257c13",
+    "name" : "create new model",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-affb13df",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects",
+        "method" : "POST",
+        "jsonBody" : {
+          "name" : "Apple MacBook Pro 16",
+          "data" : {
+            "year" : 2019,
+            "price" : 1849.99,
+            "CPU model" : "Intel Core i9",
+            "Hard disk size" : "1 TB"
+          }
+        },
+        "authorization" : {
+          "type" : "noauth",
+          "data" : [ {
+            "key" : "",
+            "value" : "",
+            "type" : null
+          } ]
+        },
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "operations" : [ {
+          "id" : 0,
+          "key" : "year",
+          "value" : "data.data.year",
+          "deleted" : false,
+          "type" : "SET",
+          "scope" : "GLOBAL",
+          "enable" : false
+        } ]
+      },
+      "mock" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects/create",
+        "method" : "POST",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "response" : {
+          "id" : "1",
+          "name" : "Iphone 15 Pro",
+          "data" : {
+            "color" : "Cloudy White",
+            "capacity" : "128 GB"
+          }
+        },
+        "operations" : [ ]
+      }
+    },
+    "collectionId" : "collection-affb13df"
+  }, {
+    "id" : "request-20983cb2",
+    "name" : "get all models",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-affb13df",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects",
+        "method" : "GET",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "operations" : [ ]
+      },
+      "mock" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects/create",
+        "method" : "POST",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "response" : {
+          "id" : "1",
+          "name" : "Iphone 15 Pro",
+          "data" : {
+            "color" : "Cloudy White",
+            "capacity" : "128 GB"
+          }
+        },
+        "operations" : [ ]
+      }
+    },
+    "collectionId" : "collection-affb13df"
+  }, {
+    "id" : "request-c8b61814",
+    "name" : "update model",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-affb13df",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects",
+        "method" : "PUT",
+        "jsonBody" : {
+          "name" : "Apple MacBook Pro 16",
+          "data" : {
+            "year" : 2019,
+            "price" : 2049.99,
+            "CPU model" : "Intel Core i9",
+            "Hard disk size" : "1 TB",
+            "color" : "silver"
+          }
+        },
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "operations" : [ ]
+      },
+      "mock" : {
+        "mode" : "RAW",
+        "method" : "GET",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "response" : "",
+        "operations" : [ ]
+      }
+    },
+    "collectionId" : "collection-affb13df"
+  }, {
+    "id" : "request-8d049c48",
+    "name" : "delete model",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-affb13df",
+    "items" : [ ],
+    "requestDetails" : {
+      "actual" : {
+        "mode" : "RAW",
+        "url" : "https://api.restful-api.dev/objects/6",
+        "method" : "DELETE",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "queryParams" : [ ],
+        "operations" : [ ]
+      },
+      "mock" : {
+        "mode" : "RAW",
+        "method" : "GET",
+        "jsonBody" : null,
+        "headers" : [ ],
+        "response" : "",
+        "operations" : [ ]
+      }
+    },
+    "collectionId" : "collection-affb13df"
+  } ],
+  "collectionId" : "collection-affb13df"
+}

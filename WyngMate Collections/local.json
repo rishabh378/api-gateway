@@ -3,6 +3,14 @@
   "name" : "local apis",
   "isFolder" : false,
   "topMostLevel" : true,
-  "items" : [ ],
+  "items" : [ {
+    "id" : "request-ef9b1cc5",
+    "name" : "new request",
+    "isFolder" : false,
+    "topMostLevel" : false,
+    "parentId" : "collection-55489c36",
+    "items" : [ ],
+    "collectionId" : "collection-55489c36"
+  } ],
   "collectionId" : "collection-55489c36"
 }

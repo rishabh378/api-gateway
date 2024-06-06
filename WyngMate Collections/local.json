@@ -37,11 +37,7 @@
         "headers" : [ ],
         "queryParams" : [ ],
         "response" : {
-          "status" : 200,
-          "message" : "Your request is processed successfully.",
-          "data" : {
-            "message" : "SUCCESS"
-          }
+          "message" : "SUCCESS"
         },
         "operations" : [ ]
       }

@@ -33,11 +33,15 @@
         "url" : "/3892832",
         "method" : "GET",
         "jsonBody" : null,
-        "mockId" : "mockrequest-406eb5fa",
+        "mockId" : "mockrequest-3f197dcf",
         "headers" : [ ],
         "queryParams" : [ ],
         "response" : {
-          "message" : "SUCCESS"
+          "status" : 200,
+          "message" : "Your request is processed successfully.",
+          "data" : {
+            "message" : "SUCCESS"
+          }
         },
         "operations" : [ ]
       }

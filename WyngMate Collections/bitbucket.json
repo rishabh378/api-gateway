@@ -18,8 +18,30 @@
       "items" : [ ],
       "requestDetails" : {
         "actual" : {
+          "mode" : "RAW",
+          "url" : "http://bitbucket.org/api",
           "method" : "PUT",
-          "headers" : [ ]
+          "jsonBody" : null,
+          "authorization" : {
+            "type" : "noauth",
+            "data" : [ {
+              "key" : "",
+              "value" : "",
+              "type" : null
+            } ]
+          },
+          "headers" : [ ],
+          "queryParams" : [ ],
+          "operations" : [ ]
+        },
+        "mock" : {
+          "mode" : "RAW",
+          "method" : "GET",
+          "jsonBody" : null,
+          "mockId" : "mockrequest-9c5ac740",
+          "headers" : [ ],
+          "response" : "",
+          "operations" : [ ]
         }
       },
       "collectionId" : "folder-5a9c88c5"

@@ -30,11 +30,15 @@
       },
       "mock" : {
         "mode" : "RAW",
+        "url" : "/3892832",
         "method" : "GET",
         "jsonBody" : null,
-        "mockId" : "mockrequest-29bad5d7",
+        "mockId" : "mockrequest-406eb5fa",
         "headers" : [ ],
-        "response" : "",
+        "queryParams" : [ ],
+        "response" : {
+          "message" : "SUCCESS"
+        },
         "operations" : [ ]
       }
     },

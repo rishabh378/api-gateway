@@ -1,8 +1,4 @@
-name: Publish to Pub/Sub
-
-permissions:
-  id-token: write  # Required for OIDC
-  contents: read
+name: Publish to Pub/Sub with WIF
 
 on:
   push:
@@ -11,31 +7,32 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Authenticate with Google Cloud
-        uses: google-github-actions/auth@v2
+      - name: Generate GitHub OIDC token
+        id: auth
+        run: |
+          echo "Getting ID token"
+          ID_TOKEN=$(curl -H "Authorization: bearer $ACTIONS_ID_TOKEN" \
+             "https://token.actions.githubusercontent.com/.well-known/openid-configuration")
+          echo "ID_TOKEN=$(echo $ID_TOKEN)" >> $GITHUB_ENV
+
+      - name: Use built-in getIDToken action
+        id: get-token
+        uses: actions/github-script@v7
         with:
-          token_format: access_token
-          workload_identity_provider: "projects/475664537947/locations/global/workloadIdentityPools/testing-pool/providers/github-provider"
-          service_account: "github-pubsub-sa@platinum-trees-391313.iam.gserviceaccount.com"
-          audience: "https://github.com/rishabh378/api-gateway"
+          script: |
+            const id_token = await core.getIDToken('sts.googleapis.com');
+            require('fs').writeFileSync('github-token.txt', id_token);
 
-      - name: Setup gcloud CLI
-        uses: google-github-actions/setup-gcloud@v1
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Build & run tests
-        run: mvn clean verify
-
-#      - name: Publish to Pub/Sub
-#        run: |
-#          gcloud pubsub topics publish c2c-lms --message="Hello from GitHub Actions"
+      - name: Build and run Java app
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/.github/workflows/github-token.json
+        run: |
+          ./mvnw clean package
+          java -jar target/api-gateway.jar

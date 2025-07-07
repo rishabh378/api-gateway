@@ -29,4 +29,4 @@ jobs:
 
       - name: Publish to Pub/Sub
         run: |
-          gcloud pubsub topics publish YOUR_TOPIC_NAME --message="Hello from GitHub Actions"
+          gcloud pubsub topics publish testing-topic --message="Hello from GitHub Actions"

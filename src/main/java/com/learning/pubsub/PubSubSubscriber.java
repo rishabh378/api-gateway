@@ -1,12 +1,10 @@
 package com.learning.pubsub;
 
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.PubsubMessage;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +12,8 @@ import javax.annotation.PostConstruct;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class PubSubSubscriber {
 
-    private final CredentialsProvider credentialsProvider;
     private final String projectId = "platinum-trees-391313";
     private final String subscriptionId = "c2c-lms";
 
@@ -34,8 +30,7 @@ public class PubSubSubscriber {
         };
 
         Subscriber subscriber = Subscriber.newBuilder(subscriptionName, receiver)
-                .setCredentialsProvider(credentialsProvider)
-                .build();
+                .build(); // Uses ADC, which will use WIF if configured
 
         subscriber.addListener(new Subscriber.Listener() {
             @Override

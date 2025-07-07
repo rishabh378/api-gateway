@@ -1,3 +1,4 @@
+/*
 package com.learning.client;
 
 import com.learning.shared.Subject;
@@ -24,3 +25,4 @@ public interface SubjectClient {
 	public void deleteSubject(@PathVariable("id") String id);
 
 }
+*/

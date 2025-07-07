@@ -1,3 +1,4 @@
+/*
 package com.learning.controller;
 
 import com.learning.client.BookClient;
@@ -49,3 +50,4 @@ public class BookController {
 		return "delete book with id:" + id;
 	}
 }
+*/

@@ -21,12 +21,21 @@ jobs:
         with:
           token_format: access_token
           workload_identity_provider: "projects/475664537947/locations/global/workloadIdentityPools/testing-pool/providers/github-provider"
-          service_account: "github-pubsub-sa@hitman-392107.iam.gserviceaccount.com"
+          service_account: "github-pubsub-sa@platinum-trees-391313.iam.gserviceaccount.com"
           audience: "https://github.com/rishabh378/api-gateway"
 
       - name: Setup gcloud CLI
         uses: google-github-actions/setup-gcloud@v1
 
-      - name: Publish to Pub/Sub
-        run: |
-          gcloud pubsub topics publish testing-topic --message="Hello from GitHub Actions"
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build & run tests
+        run: mvn clean verify
+
+#      - name: Publish to Pub/Sub
+#        run: |
+#          gcloud pubsub topics publish c2c-lms --message="Hello from GitHub Actions"

@@ -1,3 +1,4 @@
+/*
 package com.learning.client;
 
 import com.learning.shared.Book;
@@ -26,3 +27,4 @@ public interface BookClient {
 	public String deleteBookById(@PathVariable("id") int id);
 
 }
+*/

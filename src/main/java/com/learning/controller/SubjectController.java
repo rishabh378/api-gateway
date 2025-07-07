@@ -1,3 +1,4 @@
+/*
 package com.learning.controller;
 
 import com.learning.client.SubjectClient;
@@ -43,3 +44,4 @@ public class SubjectController {
 		subjectClient.deleteSubject(id);
 	}
 }
+*/

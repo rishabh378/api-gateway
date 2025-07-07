@@ -1,0 +1,32 @@
+name: Publish to Pub/Sub
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          token_format: access_token
+          workload_identity_provider: "projects/475664537947/locations/global/workloadIdentityPools/testing-pool/providers/github-provider"
+          service_account: "github-pubsub-sa@hitman-392107.iam.gserviceaccount.com"
+          audience: "https://github.com/rishabh378/api-gateway"
+
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Publish to Pub/Sub
+        run: |
+          gcloud pubsub topics publish testing-topic --message="Hello from GitHub Actions"

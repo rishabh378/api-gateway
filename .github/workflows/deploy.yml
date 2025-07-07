@@ -1,4 +1,8 @@
-name: Publish to Pub/Sub with WIF
+name: Publish to Pub/Sub
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 
 on:
   push:
@@ -7,24 +11,22 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Generate GitHub OIDC token
-        id: get-token
-        uses: actions/github-script@v7
+      - name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v2
         with:
-          script: |
-            const id_token = await core.getIDToken('sts.googleapis.com');
-            require('fs').writeFileSync('.github/workflows/github-token.txt', id_token);
+          token_format: access_token
+          workload_identity_provider: "projects/475664537947/locations/global/workloadIdentityPools/testing-pool/providers/github-provider"
+          service_account: "github-pubsub-sa@hitman-392107.iam.gserviceaccount.com"
+          audience: "https://github.com/rishabh378/api-gateway"
 
-      - name: Build and run Java app
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/.github/workflows/github-token.json
+      - name: Setup gcloud CLI
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Publish to Pub/Sub
         run: |
-          ./mvnw clean package
-          java -jar target/api-gateway.jar
+          gcloud pubsub topics publish testing-topic --message="Hello from GitHub Actions"
